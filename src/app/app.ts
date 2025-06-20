@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { inject as WebAnalytics } from '@vercel/analytics'
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,10 @@ import { Component } from '@angular/core';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {}
+export class App implements OnInit {
+
+  ngOnInit(): void {
+    WebAnalytics(); // Vercel Web Analytics
+  }
+
+}
