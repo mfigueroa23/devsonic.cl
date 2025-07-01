@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { inject as WebAnalytics } from '@vercel/analytics'
-import { injectSpeedInsights as SpeedInsights } from '@vercel/speed-insights';
+import { inject as VercelWebAnalytics } from '@vercel/analytics'
+import { injectSpeedInsights as VercelSpeedInsights } from '@vercel/speed-insights';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +11,8 @@ import { injectSpeedInsights as SpeedInsights } from '@vercel/speed-insights';
 export class App implements OnInit {
 
   ngOnInit(): void {
-    WebAnalytics(); // Vercel Web Analytics
-    SpeedInsights(); // Vercel Speed Insights
+    VercelWebAnalytics();
+    VercelSpeedInsights();
   }
 
 }
