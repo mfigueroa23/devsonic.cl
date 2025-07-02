@@ -1,8 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@plugin '@midudev/tailwind-animations';
+
 @theme {
   --color-navy: #213555;
   --color-navy-light: #3E5879;
   --color-beige: #D8C4B6;
   --color-beige-light: #F5EFE7;
+
+  --font-dank-mono-regular: 'Dank Mono Regular', system-ui, sans-serif;
+  --font-dank-mono-italic: 'Dank Mono Italic', system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: 'Dank Mono Regular';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+  src: url("../public/fonts/DankMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Dank Mono Italic';
+  font-style: italic;
+  font-weight: 100 700;
+  font-display: swap;
+  src: url("../public/fonts/DankMono-Italic.woff2") format("woff2");
 }
