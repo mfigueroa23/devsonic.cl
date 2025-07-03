@@ -10,6 +10,9 @@
 
   --font-dank-mono-regular: 'Dank Mono Regular', system-ui, sans-serif;
   --font-dank-mono-italic: 'Dank Mono Italic', system-ui, sans-serif;
+
+  --breakpoint-tablets: 960px;
+  --breakpoint-menu: 959px
 }
 
 @font-face {

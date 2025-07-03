@@ -10,9 +10,16 @@ import { injectSpeedInsights as VercelSpeedInsights } from '@vercel/speed-insigh
 })
 export class App implements OnInit {
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     VercelWebAnalytics();
     VercelSpeedInsights();
+  }
+
+  public menuDropdown(): void {
+    const mobileMenu: Element | null = document.querySelector('.mobile-menu');
+    const menuButton: Element | null = document.getElementsByTagName('i')[0]
+    if(mobileMenu) mobileMenu.classList.toggle('hidden');
+    if(menuButton) menuButton.classList.contains('fa-bars') ? menuButton.classList.replace('fa-bars', 'fa-xmark') : menuButton.classList.replace('fa-xmark', 'fa-bars');
   }
 
 }

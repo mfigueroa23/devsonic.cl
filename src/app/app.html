@@ -1,12 +1,24 @@
-<header class="flex flex-row items-center justify-between w-[90%] p-5 position-sticky shadow-lg bg-beige rounded-2xl mb-10 z-10">
-  <a href="" class="flex flex-row gap-5 animate-fade-in text-5xl items-center content-center align-middle">
-    <span class="p-2 bg-gradient-to-br bg-navy rounded-4xl">🎧</span>
-    <h1 class="font-dank-mono-italic text-navy">Devsonic</h1>
-  </a>
-  <nav class="flex flex-row gap-5 font-dank-mono-regular text-2xl">
-    <a class="px-4 py-2 text-navy rounded-2xl border-navy border-1 hover:bg-navy-light hover:border-navy-light hover:text-beige-light hover:rounded-3xl transition-all ease-in-out animate-fade-in animate-delay-150" href="">Sobre Mi</a>
-    <a class="px-4 py-2 text-navy rounded-2xl border-navy border-1 hover:bg-navy-light hover:border-navy-light hover:text-beige-light hover:rounded-3xl transition-all ease-in-out animate-fade-in animate-delay-[300ms]" href="">Experiencia</a>
-    <a class="px-4 py-2 text-navy rounded-2xl border-navy border-1 hover:bg-navy-light hover:border-navy-light hover:text-beige-light hover:rounded-3xl transition-all ease-in-out animate-fade-in animate-delay-[450ms]" href="">Proyectos</a>
-    <a class="px-4 py-2 text-navy rounded-2xl border-navy border-1 hover:bg-navy-light hover:border-navy-light hover:text-beige-light hover:rounded-3xl transition-all ease-in-out animate-fade-in animate-delay-[600ms]" href="">Contacto</a>
+<header class="flex flex-col items-center justify-between w-[90%] p-5 position-sticky shadow-lg bg-beige rounded-2xl mb-10 z-10 transition-discrete ease-in-out">
+  <nav class="flex flex-row items-center justify-between w-full">
+    <a href="" class="flex flex-row gap-5 animate-fade-in items-center content-center align-middle">
+      <span class="hidden sm:block p-2 bg-gradient-to-b from-navy via-navy-light to-navy rounded-4xl text-4xl">🎧</span>
+      <h1 class="text-4xl sm:block font-dank-mono-italic text-navy">Devsonic</h1>
+    </a>
+    <nav class="hidden tablets:flex flex-row gap-5 font-dank-mono-regular text-1xl">
+      <a class="px-4 py-2 text-navy rounded-2xl border-navy border-1 hover:cursor-pointer hover:bg-navy-light hover:border-navy-light hover:text-beige-light hover:rounded-3xl transition-all ease-in-out animate-fade-in animate-delay-150">Sobre Mi</a>
+      <a class="px-4 py-2 text-navy rounded-2xl border-navy border-1 hover:cursor-pointer hover:bg-navy-light hover:border-navy-light hover:text-beige-light hover:rounded-3xl transition-all ease-in-out animate-fade-in animate-delay-[300ms]">Experiencia</a>
+      <a class="px-4 py-2 text-navy rounded-2xl border-navy border-1 hover:cursor-pointer hover:bg-navy-light hover:border-navy-light hover:text-beige-light hover:rounded-3xl transition-all ease-in-out animate-fade-in animate-delay-[450ms]">Proyectos</a>
+      <a class="px-4 py-2 text-navy rounded-2xl border-navy border-1 hover:cursor-pointer hover:bg-navy-light hover:border-navy-light hover:text-beige-light hover:rounded-3xl transition-all ease-in-out animate-fade-in animate-delay-[600ms]">Contacto</a>
+    </nav>
+    <!-- Mobile Icon -->
+    <button (click)="menuDropdown()" class="mobile-menu-button menu:hidden flex items-center text-navy text-3xl animate-fade-in animate-delay-300">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </nav>
+  <nav class="mobile-menu hidden font-dank-mono-regular text-center text-navy">
+    <a (click)="menuDropdown()" class="block py-1.5 my-2.5 animate-fade-in animate-delay-150">Sobre Mi</a><hr>
+    <a (click)="menuDropdown()" class="block py-1.5 my-2.5 animate-fade-in animate-delay-[300ms]">Experiencia</a><hr>
+    <a (click)="menuDropdown()" class="block py-1.5 my-2.5 animate-fade-in animate-delay-[450ms]">Proyectos</a><hr>
+    <a (click)="menuDropdown()" class="block py-1.5 my-2.5 animate-fade-in animate-delay-[600ms]">Contacto</a>
   </nav>
 </header>
