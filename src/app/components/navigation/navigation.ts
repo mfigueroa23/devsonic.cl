@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { Button } from '../button/button';
 
 @Component({
@@ -15,4 +15,11 @@ export class Navigation {
     { href: '/#education', label: 'Education' },
     { href: '/#testimonials', label: 'Testimonials' },
   ];
+  public readonly isMobileMenuOpen = signal(false);
+  public readonly mobileIcon = computed(
+    () => `fa-solid fa-${this.isMobileMenuOpen() ? 'x' : 'bars'} fa-xl`,
+  );
+  public showMenu = (): void => {
+    this.isMobileMenuOpen.update((open) => !open);
+  };
 }
