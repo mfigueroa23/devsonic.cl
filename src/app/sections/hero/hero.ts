@@ -55,5 +55,5 @@ export class Hero {
     'Jira',
     'Confluence',
   ];
-  public techStack = [...this.technologies, ...this.technologies, ...this.technologies];
+  public techStack = [...this.technologies, ...this.technologies];
 }
