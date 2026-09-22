@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, afterNextRender, computed, signal } from '@angular/core';
 import { Button } from '../button/button';
 
 @Component({
@@ -6,13 +6,19 @@ import { Button } from '../button/button';
   selector: 'app-navigation',
   styleUrl: './navigation.css',
   templateUrl: './navigation.html',
+  host: {
+    '(window:scroll)': 'onScroll()',
+  },
 })
 export class Navigation {
+  constructor() {
+    afterNextRender(() => this.onScroll());
+  }
+  public readonly isScrolled = signal(false);
   public navLinks: { href: string; label: string }[] = [
     { href: '/#about', label: 'About' },
     { href: '/#projects', label: 'Projects' },
     { href: '/#experience', label: 'Experience' },
-    { href: '/#education', label: 'Education' },
     { href: '/#testimonials', label: 'Testimonials' },
   ];
   public readonly isMobileMenuOpen = signal(false);
@@ -22,4 +28,7 @@ export class Navigation {
   public showMenu = (): void => {
     this.isMobileMenuOpen.update((open) => !open);
   };
+  protected onScroll(): void {
+    this.isScrolled.set(window.scrollY > 50);
+  }
 }

@@ -1,7 +1,7 @@
 import { Component, computed, input } from '@angular/core';
 
 const base: string =
-  'relative overflow-hidden rounded-full font-md focus:outline-none focus-visible:ring-2 focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25';
+  'relative overflow-hidden rounded-full font-md focus:outline-none focus-visible:ring-2 focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 cursor-pointer';
 
 const sizes = {
   sm: 'px-4 py-2 text-sm',

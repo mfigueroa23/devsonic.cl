@@ -1,6 +1,5 @@
-<header class="fixed top-0 right-0 left-0 bg-transparent py-5">
+<header class="fixed top-0 right-0 left-0 z-50 transition-all duration-500" [class]="isScrolled() ? 'glass-strong py-3' : 'bg-transparent py-5'">
   <nav class="container mx-auto px-6 flex items-center justify-between">
-
     <!-- Logo -->
     <a href="/#" class="text-xl font-bold tracking-tight hover:text-primary">
       MF<span class="text-primary">.</span>
@@ -26,7 +25,6 @@
     <button class="md:hidden p-2 text-foreground" (click)="showMenu()">
       <i class="{{ mobileIcon() }}"></i>
     </button>
-
   </nav>
 
   <!-- Mobile Navigation Menu -->
@@ -42,5 +40,4 @@
       </nav>
     </section>
   }
-
 </header>
