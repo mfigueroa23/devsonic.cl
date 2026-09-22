@@ -12,7 +12,6 @@ export class Navigation {
     { href: '/#about', label: 'About' },
     { href: '/#projects', label: 'Projects' },
     { href: '/#experience', label: 'Experience' },
-    { href: '/#education', label: 'Education' },
     { href: '/#testimonials', label: 'Testimonials' },
   ];
   public readonly isMobileMenuOpen = signal(false);

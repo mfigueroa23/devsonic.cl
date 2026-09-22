@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Education } from './education';
+import { AnimatedButton } from './animated-button';
 
-describe('Education', () => {
-  let component: Education;
-  let fixture: ComponentFixture<Education>;
+describe('AnimatedButton', () => {
+  let component: AnimatedButton;
+  let fixture: ComponentFixture<AnimatedButton>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Education],
+      imports: [AnimatedButton],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Education);
+    fixture = TestBed.createComponent(AnimatedButton);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
