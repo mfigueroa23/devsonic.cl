@@ -3,7 +3,7 @@ import {
   contactEmailHtml,
   contactEmailSubject,
   contactEmailText,
-} from '../templates/contact-email';
+} from '../templates/contact-email.js';
 
 declare const process: { env: Record<string, string | undefined> };
 

@@ -13,6 +13,7 @@
     "test": "ng test"
   },
   "private": true,
+  "type": "module",
   "packageManager": "pnpm@12.6.0",
   "dependencies": {
     "@angular/common": "^22.1.0",
