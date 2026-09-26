@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { Button } from '../../components/button/button';
 
-const email = 'mfigueroa@devsonic.cl';
+const email = 'marco@figueroa-sanchez.com';
 
 @Component({
   imports: [Button],
@@ -12,12 +12,6 @@ const email = 'mfigueroa@devsonic.cl';
 export class Contact {
   public contactInfo: { icon: string; label: string; value: string; href: string }[] = [
     { icon: 'fa-solid fa-envelope', label: 'Email', value: email, href: `mailto:${email}` },
-    {
-      icon: 'fa-solid fa-phone',
-      label: 'Phone',
-      value: '+56 9 5195 9027',
-      href: 'tel:+56951959027',
-    },
     {
       icon: 'fa-solid fa-location-dot',
       label: 'Location',
