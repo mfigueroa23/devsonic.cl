@@ -7,7 +7,7 @@
     <ng-container [ngTemplateOutlet]="content" />
   </a>
 } @else {
-  <button class="{{ styles() }}">
+  <button class="{{ styles() }}" [disabled]="disabled()">
     <ng-container [ngTemplateOutlet]="content" />
   </button>
 }
