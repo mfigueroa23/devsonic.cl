@@ -22,12 +22,33 @@ export class Contact {
   public readonly name = signal('');
   public readonly email = signal('');
   public readonly message = signal('');
-  public readonly isSent = signal(false);
-  public onSubmit(event: SubmitEvent): void {
+  public readonly isLoading = signal(false);
+  public readonly status = signal<{ type: 'success' | 'error'; message: string } | null>(null);
+  public async onSubmit(event: SubmitEvent): Promise<void> {
     event.preventDefault();
-    const subject = encodeURIComponent(`Portfolio contact from ${this.name()}`);
-    const body = encodeURIComponent(`${this.message()}\n\n${this.name()} <${this.email()}>`);
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    this.isSent.set(true);
+    this.isLoading.set(true);
+    this.status.set(null);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ name: this.name(), email: this.email(), message: this.message() }),
+      });
+      const result: { message?: string; error?: string } = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error);
+      this.status.set({ type: 'success', message: result.message ?? 'Message sent successfully!' });
+      this.name.set('');
+      this.email.set('');
+      this.message.set('');
+    } catch (error) {
+      this.status.set({
+        type: 'error',
+        message:
+          (error instanceof Error && error.message) ||
+          'Failed to send message. Please try again later.',
+      });
+    } finally {
+      this.isLoading.set(false);
+    }
   }
 }
