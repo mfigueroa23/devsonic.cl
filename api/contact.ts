@@ -8,6 +8,7 @@ import {
 declare const process: { env: Record<string, string | undefined> };
 
 const recipient = { name: 'Marco Figueroa', email: 'marco@figueroa-sanchez.com' };
+const senderEmail = "contact@figueroa-sanchez.com"
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const json = (body: object, status: number): Response => Response.json(body, { status });
@@ -47,7 +48,7 @@ export async function POST(request: Request): Promise<Response> {
     body: JSON.stringify({
       sender: { name: 'Portfolio Contact', email: recipient.email },
       to: [recipient],
-      replyTo: { name: contact.name, email: contact.email },
+      replyTo: { name: contact.name, email: senderEmail},
       subject: contactEmailSubject(contact),
       htmlContent: contactEmailHtml(contact),
       textContent: contactEmailText(contact),
