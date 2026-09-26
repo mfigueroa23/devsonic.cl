@@ -1,3 +1,4 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
 
 const base: string =
@@ -12,7 +13,7 @@ const sizes = {
 type Size = keyof typeof sizes;
 
 @Component({
-  imports: [],
+  imports: [NgTemplateOutlet],
   selector: 'app-button',
   styleUrl: './button.css',
   templateUrl: './button.html',
@@ -20,6 +21,7 @@ type Size = keyof typeof sizes;
 export class Button {
   public readonly size = input<Size>('default');
   public readonly extraClass = input<string>('');
+  public readonly href = input<string>('');
 
   protected readonly styles = computed(() =>
     `${base} ${sizes[this.size()]} ${this.extraClass()}`.trim(),
