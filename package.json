@@ -1,9 +1,9 @@
 {
-  "name": "devsonic.cl",
-  "version": "1.2.0",
+  "name": "Portfolio",
+  "version": "2.0.0",
   "author": {
     "name": "Marco Antonio Figueroa Sanchez",
-    "email": "mfigueroa@devsonic.cl"
+    "email": "marco@figueroa-sanchez.com"
   },
   "scripts": {
     "ng": "ng",
@@ -13,7 +13,7 @@
     "test": "ng test"
   },
   "private": true,
-  "packageManager": "pnpm@12.5.1",
+  "packageManager": "pnpm@12.6.0",
   "dependencies": {
     "@angular/common": "^22.1.0",
     "@angular/compiler": "^22.1.0",
